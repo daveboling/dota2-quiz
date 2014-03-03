@@ -26,6 +26,10 @@ body {
 	min-height: 768px;
 }
 
+/*Overall Positioning
+---------------------------------
+---------------------------------
+*/
 
 #middle_container {
 width: 70%;
@@ -33,7 +37,6 @@ height: 700px;
 min-width: 900px;
 min-height: 700px;
 margin: 0px auto;
-padding-top: 70px;
 }
 
 /*General Information/Instructions for Base Menu and Quiz
@@ -44,7 +47,6 @@ padding-top: 70px;
 .instruction {
 	font-size: 30px;
 	font-family: Arial;
-	padding: 100px;
 }
 
 .information {
@@ -59,23 +61,24 @@ padding-top: 70px;
 ---------------------------------
 */
 
-.s_button {
+.s_button, .q_button {
 	background-image: url(../images/buttons/n_button.png);
 	background-repeat: no-repeat;
 	width: 464px;
 	height: 53px;
 	margin: 0px auto;
+	line-height: 45px;
+	font-size: 20px;
 }
 
 .s_button span {
 	font-size: 35px;
 }
 
-.s_button:hover {
+.s_button:hover, .q_button:hover {
 	border-radius: 100px;
 	color: red;
 	cursor: pointer;
-
 }
 
 .coming_soon {
@@ -88,13 +91,13 @@ padding-top: 70px;
 */
 
 #base_menu {
-	display: none;
 	width: 95%;
 	min-width: 464px;
 	height: 100%;
 	min-height: 500px;
 	margin: 0px auto;
 	text-align: center;
+	padding-top: 30px;
 }
 
 
@@ -104,20 +107,47 @@ padding-top: 70px;
 */
 
 #quiz {
+	display: none;
 	width: 95%;
 	min-width: 464px;
 	height: 100%;
 	min-height: 500px;
 	margin: 0px auto;
 	text-align: center;
+	padding-top: 30px;
 }
 
 .question {
+	font-size: 30px;
+}
+
+.img_holder {
+	padding-top: 20px;
 	
+}
+
+.img_holder img {
+	width: 12%;
+	border: 1px solid #800000;
 }
 
 .button_area {
 	margin-top: 100px;
 }
 
+/*GAME OVER
+---------------------------------
+---------------------------------
+*/
+
+#game_over {
+	display: none;
+	width: 95%;
+	min-width: 464px;
+	height: 100%;
+	min-height: 500px;
+	margin: 0px auto;
+	text-align: center;
+	padding-top: 30px;
+}
 
