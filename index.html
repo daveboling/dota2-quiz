@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="js/jquery.tubular.1.0.js"></script>
-	<script src="js/background.js"></script>
+	<!-- <script src="js/background.js"></script> -->
 	<script src="js/mainApp.js"></script>
 	<script src="js/basic.js"></script>
 
@@ -14,19 +14,23 @@
 <body>
 <div id="background">
 
+
+
+
+<div id="middle_container">
+
 <div id="loading_screen" class="information">
 <div>
 	<span class="welcome">Welcome to the DOTA 2 Challenge</span><br /><br />
 	<span id="one">You've tested your might on the battlefield.</span><br /><br />
 	<span id="two">Now it's time to see how much you <em>really know</em>.</span><br /><br />
 	<span id="three">Click the DOTA 2 symbol to continue.</span><br /><br />
-	<img src="images/buttons/img_1.png" alt="DOTA 2"/><br />
+	<div class="rel"><div class="arrow"></div><img src="images/buttons/img_1.png" alt="DOTA 2"/><br /></div>
 	<span id="loading">Loading <span id="perc">0</span>%</span><br />
 </div>
 </div>
 
 
-<div id="middle_container">
 <!-- BASE MENU -->
 <div id="base_menu" class="information">
 	<div class="instruction">Choose your challenge.</div>
@@ -46,6 +50,7 @@
 		<div class="q_button" id="choice2" ></div>
 		<div class="q_button" id="choice3" ></div>
 	</div>
+	<div id="correct"></div>
 
 </div>
 

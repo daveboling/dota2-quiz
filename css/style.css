@@ -98,11 +98,48 @@ margin: 0px auto;
 	text-decoration: line-through;
 }
 
+.rel {
+	position: relative;
+}
+
+.arrow {
+	background-image: url("../images/buttons/arrow.png");
+	background-repeat: no-repeat;
+	background-size: 50%;
+	display: none;
+	position: absolute;
+	left: 30%;
+	top: 40%;
+	width: 60px; 
+	height: 60px;
+}
+
+.check {
+	background-image: url("../images/buttons/check.png");
+	background-repeat: no-repeat;
+	background-size: 50%;
+	position: absolute;
+	left: 30%;;
+	width: 60px; 
+	height: 60px;
+}
+
+.x {
+	background-image: url("../images/buttons/x.png");
+	background-repeat: no-repeat;
+	background-size: 50%;
+	position: absolute;
+	left: 30%;;
+	width: 60px; 
+	height: 60px;
+}
+
 /*LOADING SCREEN
 ---------------------------------
 ---------------------------------
 */
 #loading_screen {
+	display: none;
 	font-size: 20px;
 }
 
@@ -110,7 +147,7 @@ margin: 0px auto;
 	display: none;
 	cursor: pointer;
 	width: 20%;
-	min-width: 50px;
+	min-width: 150px;
 }
 
 #loading {
@@ -125,7 +162,6 @@ margin: 0px auto;
 */
 
 #base_menu {
-	display: none;
 }
 
 
@@ -154,6 +190,18 @@ margin: 0px auto;
 
 .button_area {
 	margin-top: 100px;
+}
+
+#correct {
+	display: none;
+	min-width: 200px;
+	min-height: 40px;
+	width: 80%;
+	height: 100%;
+	margin: 0px auto;
+	text-align: center;
+	padding-top: 60px;
+	font-size: 30px;
 }
 
 /*GAME OVER

@@ -33,11 +33,16 @@ $('#perc').html(loadPercent);
 
 //Load intro if done loading
 if (loadPercent === 100){
-	$('#loading').fadeOut(1000);
-	$('#three').fadeIn(2000);
-	$('#loading_screen img').fadeIn(2000);
+	$('#loading').fadeOut(1000, function () {
+		$('#three').fadeIn(500, function () {
+			$('#loading_screen img').fadeIn(500, function(){
+				$('.arrow').fadeIn(800);
+			});
+		});
+	});
 }
 
+//If DOTA 2 Symbol is clicked 
 $('#loading_screen img').on('click', function(){
 	$('#loading_screen').fadeOut(1000, function () {
 		$('#base_menu').fadeIn(1000);
@@ -51,6 +56,19 @@ $('#loading_screen img').on('click', function(){
 ------------------
 ------------------*/
 
+/* ARROW ANIMATION */
+var arr = $('.arrow');
+function arrow() {
+arr.animate({left: '+=5%'}, 300, function () {
+	arr.animate({left: '-=5%'}, 300, function(){
+		arrow();
+	});
+
+});
+
+}
+
+arrow();
 
 
 
@@ -83,33 +101,50 @@ var answer;
 function quiz (array) {
 	var i = 0;
 	var score = 0;
+	
 
 
 	loadQuestion(); //initial load
 
+	$('.q_button').on('click', checkAnswer);
 
-	$('.q_button').on('click', function () {
+
+function checkAnswer() {
+
+		$('.q_button').off('click', checkAnswer);
 
 		if (this.innerHTML == array[i].choices[answer]){
-			console.log('You got the right answer!');
+
+			$('#correct').html('<div class="check"></div>Correct ').fadeIn(2000);
 			score++;
 		}
 		else {
-			console.log('You got the wrong answer!');
+			$('#correct').html('<div class="x"></div> Correct Answer: ' + array[i].choices[answer]).fadeIn(2000);
 		}
 
-		loadQuestion(i++);
 
-		if(i === array.length - 1){
+		setTimeout(function () {
+			i++;
+			$('.q_button').on('click', checkAnswer);
+			loadQuestion();
+		}, 2000);
+
+		if(i === array.length - 2){
+		setTimeout(function () {
+			loadQuestion();
+
 			q_menu.hide();
 			game_over.fadeIn();
 			game_over.find('#score').text(score);
+		}, 2000);
 		}
 
-	});
+	
+
+}
 
 
-	function loadQuestion(q){
+function loadQuestion(){
 
 	answer = array[i].answer;
 
@@ -126,7 +161,10 @@ function quiz (array) {
 		q_menu.find('#choice' + j).text(array[i].choices[j]);
 	}
 
+	//Clear correct/wrong answer
+	$('#correct').html('').hide();
 }
+
 
 
 }
