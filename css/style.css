@@ -139,7 +139,6 @@ margin: 0px auto;
 ---------------------------------
 */
 #loading_screen {
-	display: none;
 	font-size: 20px;
 }
 
@@ -162,6 +161,7 @@ margin: 0px auto;
 */
 
 #base_menu {
+	display: none;
 }
 
 
