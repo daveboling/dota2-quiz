@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Constantia';
+    src: url('../fonts/Constantia.ttf');
+}
+
 div {
 	border: 0px solid white;
 }
@@ -12,6 +17,8 @@ body {
   	margin: 0px;
   	margin: 0;
 	color: white;
+
+	font-family: 'Constantia';
 }
 
 /*Video Background
@@ -51,7 +58,13 @@ margin: 0px auto;
 
 .information {
 	background-color: rgba(0, 0, 0, 0.8);
-	height: 90%;
+	width: 80%;
+	min-width: 464px;
+	height: 100%;
+	min-height: 500px;
+	margin: 0px auto;
+	text-align: center;
+	padding-top: 30px;
 }
 
 
@@ -62,7 +75,7 @@ margin: 0px auto;
 */
 
 .s_button, .q_button {
-	background-image: url(../images/buttons/n_button.png);
+	background-image: url("../images/buttons/n_button.png");
 	background-repeat: no-repeat;
 	width: 464px;
 	height: 53px;
@@ -85,19 +98,34 @@ margin: 0px auto;
 	text-decoration: line-through;
 }
 
+/*LOADING SCREEN
+---------------------------------
+---------------------------------
+*/
+#loading_screen {
+	font-size: 20px;
+}
+
+#loading_screen img {
+	display: none;
+	cursor: pointer;
+	width: 20%;
+	min-width: 50px;
+}
+
+#loading {
+	font-size: 30px;
+}
+
+#three {display: none;}
+
 /*BASE MENU
 ---------------------------------
 ---------------------------------
 */
 
 #base_menu {
-	width: 95%;
-	min-width: 464px;
-	height: 100%;
-	min-height: 500px;
-	margin: 0px auto;
-	text-align: center;
-	padding-top: 30px;
+	display: none;
 }
 
 
@@ -108,13 +136,6 @@ margin: 0px auto;
 
 #quiz {
 	display: none;
-	width: 95%;
-	min-width: 464px;
-	height: 100%;
-	min-height: 500px;
-	margin: 0px auto;
-	text-align: center;
-	padding-top: 30px;
 }
 
 .question {
@@ -142,12 +163,5 @@ margin: 0px auto;
 
 #game_over {
 	display: none;
-	width: 95%;
-	min-width: 464px;
-	height: 100%;
-	min-height: 500px;
-	margin: 0px auto;
-	text-align: center;
-	padding-top: 30px;
 }
 

@@ -1,10 +1,61 @@
 $(document).ready(function () {
 
-var q_menu = $('#quiz');
-var game_over = $('#game_over');
+
+/* PRE LOADER */
+//All other images
+var misc_images = [
+	{src: '../images/buttons/n_button.png' },
+	{src: '../images/back.jpg' },
+];
+
+var loadPercent = 0;
+var images = [];
+var k;
+function preload(array) {
+	for (k = 0; k < array.length; k++) {
+		if (array[k].pic === true)
+		{
+			images[k] = new Image();
+			images[k].src = array[k].src;
+			
+		}
+		
+	}
+
+}
+//What to load? Put it here!
+preload(misc_images);
+preload(basic);
+
+//Percentage bar
+loadPercent = k / images.length * 75;
+$('#perc').html(loadPercent);
+
+//Load intro if done loading
+if (loadPercent === 100){
+	$('#loading').fadeOut(1000);
+	$('#three').fadeIn(2000);
+	$('#loading_screen img').fadeIn(2000);
+}
+
+$('#loading_screen img').on('click', function(){
+	$('#loading_screen').fadeOut(1000, function () {
+		$('#base_menu').fadeIn(1000);
+	});
+	
+});
 
 
 
+/* PRE LOADER END 
+------------------
+------------------*/
+
+
+
+
+
+/* BASE MENU SELECTION */
 //Hide the .base_menu on choice
 $('#basic').on('click', function () {
 
@@ -15,8 +66,18 @@ $('#basic').on('click', function () {
 
 	$('#quiz').fadeIn(500);
 });
+/* BASE MENU SELECTION END
+--------------------------
+--------------------------*/
 
 
+
+
+
+
+/* MAIN QUIZ MANAGER */
+var q_menu = $('#quiz');
+var game_over = $('#game_over');
 var answer;
 
 function quiz (array) {
@@ -69,7 +130,9 @@ function quiz (array) {
 
 
 }
-
+/* MAIN QUIZ MANAGER END
+------------------------
+------------------------*/
 
 
 
